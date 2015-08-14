@@ -2,11 +2,8 @@
 
 Storing, Retrieving, and Analyzing Social Media Data Using MongoDB Assignment
 W205.3, Summer 2015
-Al Byun
-
 
 I- Design Decisions and Rationale
-
 
 1-Storing Tasks
 
@@ -18,7 +15,6 @@ I pulled the chunks (text files) containing the json documents of tweets from As
 These tweets were pulled from two separate S3 buckets ("june7_14_warriors_tweets" and "june7_14_nbafinals2015_tweets").
 As this for loop iterated over these chunks, each raw tweet json document, including metadata, was passed into the "db_restT" MongoDB collection.
 Then the "text", "created_at", "screen_name", "location", "followers_count", and "retweet_count" were parsed out of each tweet json document and placed into the "db_tweets" MongoDB collection.
-
 
 
 2-Retrieving and Analyzing Tasks
@@ -61,7 +57,6 @@ This Classifier was run on the "Top 30 Retweets" and the sentiment was approxima
 The "Top 30 Retweets" and each approximated sentiment were stored into the "sentiment_analysis_top_30_retweets.csv".
 
 
-
 3-Storing and Retrieving Task
 
 3.1- Write a python program to create and store the backups of both db_tweets and db_restT to S3. It also should have a capability of loading the backups if necessary.
@@ -75,12 +70,7 @@ I completed the restore task by using MongoRestore.
 The .zip files were downloaded from S3, unzipped, put into a folder, and re-mapped to MongoDB.
 
 
-
-
-
-
-
-II- Deliverables
+Deliverables
 
 1- A link to your S3 bucket that holds the backups documented in your README.md file. Make sure to make it publicly accessible.
 
@@ -95,9 +85,6 @@ The "for_submission" version is a duplicate of my running version, except the ac
 3- The plot of your lexical diversities in task 2.2 showing the lexical diveristies of the top 30 users and the result of the sentiment analysis in task 2.4 if you complete the bonus part.
 
 "figure_1.png" - contains my plot of lexical diversities from task 2.2
-
 "dropped_follower_list_10.csv" - contains the results from task 2.3, the difference between the "followers_list_10_old" and the "followers_list_10_new"
-
 "sentiment_analysis_top_30_retweets.csv" - contains the result of my sentiment analysis for the Top 30 Retweets using the Naive Bayes Classifier
-
 "full_training_dataset.csv" - contains the training data used to train the Naive Bayes Classifier
